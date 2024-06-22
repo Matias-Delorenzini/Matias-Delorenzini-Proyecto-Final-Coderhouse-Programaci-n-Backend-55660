@@ -62,6 +62,4 @@ app.get("/", (req, res) => {
 
 app.use(errorHandler);
 
-const PORT = config.port || 8080;
-
-app.listen(PORT, () => logger.info(`Listening on PORT: ${PORT}`));
+app.listen(config.port, () => logger.info(`Listening on PORT: ${config.port}`));
