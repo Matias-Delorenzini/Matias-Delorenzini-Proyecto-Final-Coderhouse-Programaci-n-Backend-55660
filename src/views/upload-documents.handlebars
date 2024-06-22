@@ -1,0 +1,16 @@
+<h2>Carga tus datos de usuario para procesar tu solicitud de cuenta premuim</h2>
+<form action="/api/users/documents" method="post" enctype="multipart/form-data">
+    <label for="identificacion">🕵️‍♂️ Identificación:</label><br>
+    <input type="file" name="identificacion" id="identificacion" accept="application/pdf"/> 
+    <br><br>
+
+    <label for="comprobante-de-domicilio">🏠 Comprobante de domicilio:</label><br>
+    <input type="file" name="comprobante-de-domicilio" id="comprobante-de-domicilio" accept="application/pdf"/> 
+    <br><br>
+
+    <label for="comprobante-de-estado-de-cuenta">📝 Comprobante de estado de cuenta:</label><br>
+    <input type="file" name="comprobante-de-estado-de-cuenta" id="comprobante-de-estado-de-cuenta" accept="application/pdf"/> 
+    <br><br>
+    
+    <button type="submit">⬆ Subir documentos</button>
+</form>

@@ -1,0 +1,92 @@
+<div>
+    <label for="inactive-date">😴❌ Eliminar usuarios inactivos anteriores a:</label>
+    <input type="date" id="inactive-date" name="inactive-date" required>
+    <button onclick="deleteInactive()">Eliminar</button>
+</div>
+<br>
+<div>
+    <ul>
+        {{#each users}}
+           <li class="product">
+                <p>Id: {{this._id}}</p>
+                <p>Nombre: {{this.first_name}} {{this.last_name}}</p>
+                <p>Edad: {{this.age}}</p>
+                <p>Email: {{this.email}}</p>
+                <p>Id carrito: {{this.cart}}</p>
+                <p>Rol: {{this.role}}</p>
+                <p>Última conexión: {{this.last_connection}}</p>
+                <button class="change-role-button" onclick="changeRole('{{this.email}}')">🔁 Cambiar rol</button>
+                <button class="delete-button" onclick="deleteUser('{{this.email}}')">❌ Eliminar usuario</button>
+            </li>
+        {{/each}}
+    </ul>
+</div>
+
+<script>
+    async function deleteInactive() {
+        try {
+            const date = document.getElementById('inactive-date').value;
+
+            if (!date) {
+                alert("Por favor ingrese una fecha válida.");
+                return;
+            }
+
+            const response = await fetch(`/api/users/`, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ date: date })
+            });
+
+            if (!response.ok) {
+                throw new Error('Error al eliminar usuarios inactivos');
+            }
+        } catch (error) {
+            console.error('Error al realizar la solicitud para eliminar usuarios inactivos:', error);
+        } finally {
+            window.location.href = "/api/users";
+        }
+    }
+
+    async function changeRole(email) {
+        try {
+            const response = await fetch(`/api/users/admin-forced-role-change`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email: email })
+            });
+
+            if (!response.ok) {
+                throw new Error('Error al cambiar el rol del usuario');
+            }
+        } catch (error) {
+            console.error('Error al realizar la solicitud para cambiar el rol del usuario:', error);
+        } finally {
+            window.location.href = "/api/users";
+        }
+    }
+
+    async function deleteUser(email) {
+        try {
+            const response = await fetch(`/api/users/admin-forced-user-delete`, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email: email })
+            });
+
+            if (!response.ok) {
+                throw new Error('Error al eliminar el usuario');
+            }
+        } catch (error) {
+            console.error('Error al realizar la solicitud para eliminar el usuario:', error);
+        } finally {
+            window.location.href = "/api/users";
+        }
+    }
+</script>
