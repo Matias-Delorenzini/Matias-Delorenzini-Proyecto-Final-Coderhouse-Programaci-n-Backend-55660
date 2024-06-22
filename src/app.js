@@ -57,7 +57,7 @@ app.set('view engine', 'handlebars');
 app.set('views', 'src/views');
 
 app.get("/", (req, res) => {
-    res.redirect(`http://localhost:${config.port}/login`);
+    res.redirect(`/login`);
 });
 
 app.use(errorHandler);
