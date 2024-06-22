@@ -64,4 +64,4 @@ app.use(errorHandler);
 
 const PORT = config.port || 8080;
 
-app.listen(config.port, () => logger.info(`Listening on PORT: ${PORT}`));
+app.listen(PORT, () => logger.info(`Listening on PORT: ${PORT}`));
