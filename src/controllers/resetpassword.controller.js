@@ -18,7 +18,7 @@ export default class resetcontroller {
             logger.debug(`Usuario encontrado: ${user.email}`);
             const token = jwt.sign({ email }, config.jwtSecret, { expiresIn: config.jwtExpiration });
             logger.debug(`Token al ser instanciado: ${token}`)
-            const resetUrl = `http://localhost:${config.port}/api/reset/reset-password?token=${token}&email=${encodeURIComponent(email)}`;
+            const resetUrl = `https://matiasd-pf-backend-production.up.railway.app/api/reset/reset-password?token=${token}&email=${encodeURIComponent(email)}`;
 
             // Incluí un mensaje de aclaración porque me di cuenta de que le estaba llenando la casilla de correos al dueño de test@gmail.com
             await transporter.sendMail({
@@ -77,7 +77,7 @@ export default class resetcontroller {
         logger.debug(`Email cuando fue recibido la última vez: ${email}`)
         logger.debug(`newPassword WHEN RECEIVED LAST TIME: ${newPassword}`)
 
-        const resetUrl = `http://localhost:${config.port}/api/reset/reset-password?token=${token}&email=${encodeURIComponent(email)}`;
+        const resetUrl = `https://matiasd-pf-backend-production.up.railway.app/api/reset/reset-password?token=${token}&email=${encodeURIComponent(email)}`;
 
 
         if (!token || !newPassword) return res.status(400).send('Token or new password is missing');

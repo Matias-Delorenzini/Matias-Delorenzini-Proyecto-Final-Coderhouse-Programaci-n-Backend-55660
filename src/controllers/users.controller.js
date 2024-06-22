@@ -27,7 +27,7 @@ export default class userscontroller {
                         <body>
                             <center>
                                 <h4>Role cambiado a user</h4>
-                                <h4><a href="http://localhost:${config.port}">Volver al menu</a></h4>
+                                <h4><a href="https://matiasd-pf-backend-production.up.railway.app">Volver al menu</a></h4>
                             </center>
                         </body>
                     </html>`
@@ -49,8 +49,8 @@ export default class userscontroller {
                             <ul>
                                 ${user.documents.map(doc => `<li>${doc.name}</li>`).join('')}
                             </ul>
-                            <a href="http://localhost:${config.port}/api/users/upload-documents">Cargar datos personales</a>
-                            <a href="http://localhost:${config.port}">Volver al menu</a>
+                            <a href="https://matiasd-pf-backend-production.up.railway.app/api/users/upload-documents">Cargar datos personales</a>
+                            <a href="https://matiasd-pf-backend-production.up.railway.app">Volver al menu</a>
                         </center>
                     </body>
                 </html>`
@@ -68,8 +68,8 @@ export default class userscontroller {
                                     <ul>
                                         ${user.documents.map(doc => `<li>${doc.name}</li>`).join('')}
                                     </ul>
-                                    <a href="http://localhost:${config.port}/api/users/upload-documents">Cargar datos personales</a>
-                                    <a href="http://localhost:${config.port}">Volver al menu</a>
+                                    <a href="https://matiasd-pf-backend-production.up.railway.app/api/users/upload-documents">Cargar datos personales</a>
+                                    <a href="https://matiasd-pf-backend-production.up.railway.app">Volver al menu</a>
                                 </center>
                             </body>
                         </html>`
@@ -87,7 +87,7 @@ export default class userscontroller {
                         <body>
                             <center>
                                 <h4>Role cambiado a premium</h4>
-                                <h4><a href="http://localhost:${config.port}">Volver al menu</a></h4>
+                                <h4><a href="https://matiasd-pf-backend-production.up.railway.app">Volver al menu</a></h4>
                             </center>
                         </body>
                     </html>`
@@ -144,9 +144,9 @@ export default class userscontroller {
                     `<html>
                         <body>
                             <center>
-                                <a href="http://localhost:${config.port}">Volver al menu</a><br>
-                                <a href="http://localhost:${config.port}/api/users/upload-documents">Cargar más datos personales</a><br>
-                                <a href="http://localhost:${config.port}/api/users/premium">Solicitar cuenta premium</a>
+                                <a href="https://matiasd-pf-backend-production.up.railway.app">Volver al menu</a><br>
+                                <a href="https://matiasd-pf-backend-production.up.railway.app/api/users/upload-documents">Cargar más datos personales</a><br>
+                                <a href="https://matiasd-pf-backend-production.up.railway.app/api/users/premium">Solicitar cuenta premium</a>
                             </center>
                         </body>
                     </html>`
