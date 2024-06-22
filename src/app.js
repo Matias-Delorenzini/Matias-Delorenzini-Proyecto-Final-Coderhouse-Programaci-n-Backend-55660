@@ -57,7 +57,7 @@ app.set('view engine', 'handlebars');
 app.set('views', 'src/views');
 
 app.get("/", (req, res) => {
-    res.redirect(`/login`);
+    res.redirect(`https://matiasd-pf-backend-production.up.railway.app/login`);
 });
 
 app.use(errorHandler);
