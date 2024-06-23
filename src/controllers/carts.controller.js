@@ -158,7 +158,7 @@ export default class cartscontroller {
                         </ul>
                         <br>
                         <br>
-                        <a href="https://matiasd-pf-backend-production.up.railway.app/profile">Volver al menú</a>
+                        <a href="${config.railwayUrl}/profile">Volver al menú</a>
                     </html>
                 `);
             } else {

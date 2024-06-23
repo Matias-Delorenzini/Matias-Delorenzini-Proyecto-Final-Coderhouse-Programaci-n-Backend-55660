@@ -11,5 +11,6 @@ export default {
     informativeEmail:process.env.INFORMATIVE_EMAIL,
     informativeEmailPassword:process.env.INFORMATIVE_EMAIL_PASSWORD,
     jwtSecret:process.env.JWT_SECRET,
-    jwtExpiration:process.env.JWT_EXPIRATION
+    jwtExpiration:process.env.JWT_EXPIRATION,
+    railwayUrl:process.env.RAILWAY_URL
 }
