@@ -105,7 +105,7 @@ export default class userscontroller {
     controllerRenderUploadDocuments = async (req, res) => {
         try {
             const user = req.session.user
-            if (user.role === "premium") return res.redirect(`http://localhost:8080/api/users/premium`)
+            if (user.role === "premium") return res.redirect(`https://matiasd-pf-backend-production.up.railway.app/api/users/premium`)
             res.render('upload-documents', { user });
         } catch (error) {
             logger.error("Error en get /upload-documents endpoint", error);
